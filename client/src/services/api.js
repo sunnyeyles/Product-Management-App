@@ -7,7 +7,6 @@ export const getProducts = async () => {
       method: "GET",
     });
     const data = await response.json();
-    console.log(data);
     return data;
   } catch (error) {
     console.log(error);
@@ -17,18 +16,13 @@ export const getProducts = async () => {
 // delete all products
 export const deleteAllProducts = async () => {
   try {
-    const response = await fetch(
+    const response = await axios(
       "http://localhost:5000/api/deleteAllProducts",
       {
         method: "DELETE",
       }
     );
-    if (response.status === 204) {
-      console.log("All products deleted");
-    } else {
-      const data = await response.json();
-      console.log(data);
-    }
+    const data = await response.json();
   } catch (error) {
     console.log(error);
   }
@@ -36,9 +30,6 @@ export const deleteAllProducts = async () => {
 
 // create new product
 export const createNewProduct = async (formData, appendProductFromDatabase) => {
-  const body = JSON.stringify(formData);
-  console.log(body);
-
   try {
     const response = await axios("http://localhost:5000/api/addNewProduct", {
       method: "POST",
