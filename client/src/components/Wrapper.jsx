@@ -13,6 +13,7 @@ const Wrapper = () => {
   // states
   const [products, setProducts] = useState([]);
   const [inputField, setInputField] = useState({ product: "", price: 0 });
+
   // functions
   useEffect(() => {
     // fetch all products in DB
@@ -30,6 +31,7 @@ const Wrapper = () => {
       [e.target.name]: e.target.value,
     });
   };
+
   // update state with fetched data from DB
   const appendProductFromDatabase = (product) => {
     setProducts((prev) => [...prev, product]);
@@ -56,7 +58,7 @@ const Wrapper = () => {
         textColor="neutral.300"
         sx={{ textAlign: "center", margin: "1rem" }}
       >
-        Sunny's Späti
+        Products
       </Typography>
       <ProductInput
         delete="Delete All"

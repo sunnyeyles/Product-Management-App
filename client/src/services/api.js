@@ -16,15 +16,12 @@ export const getProducts = async () => {
 // delete all products
 export const deleteAllProducts = async () => {
   try {
-    const response = await axios(
-      "http://localhost:5000/api/deleteAllProducts",
-      {
-        method: "DELETE",
-      }
+    const response = await axios.delete(
+      "http://localhost:5000/api/deleteAllProducts"
     );
-    const data = await response.json();
+    return response.data;
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 
