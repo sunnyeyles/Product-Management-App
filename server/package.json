@@ -1,0 +1,21 @@
+{
+  "name": "server1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "Sunny Eyles",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0"
+  }
+}
